@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chukwuemeka Oko — Cybersecurity Portfolio</title>
+<meta name="description" content="Cybersecurity Analyst (Training) @ Bincom Dev Center · SOC & Cloud Security · Creator, CyberWatch NG. Hands-on labs in threat detection, WAF, SIEM, cloud security, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Manrope:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:      #f8f5f0;
+    --bg2:     #ffffff;
+    --bg3:     #f2ede6;
+    --nav:     #1a1714;
+    --border:  #e0d8ce;
+    --border2: #c8bfb2;
+    --gold:    #b8892a;
+    --gold2:   #9a7020;
+    --gold3:   #f0e4cc;
+    --goldb:   #7a5510;
+    --text:    #3a3530;
+    --muted:   #7a7068;
+    --light:   #a0968a;
+    --bright:  #1a1410;
+    --serif:   'Playfair Display', serif;
+    --sans:    'Manrope', sans-serif;
+    --mono:    'Fira Code', monospace;
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+
+  /* ── NAV ── */
+  nav {
+    background: var(--nav);
+    padding: 0 32px;
+    position: sticky; top: 0; z-index: 100;
+  }
+
+  .nav-inner {
+    max-width: 1080px; margin: 0 auto;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 56px;
+  }
+
+  .nav-brand {
+    font-family: var(--serif); font-size: 16px; font-weight: 700;
+    color: #ffffff; text-decoration: none; letter-spacing: -0.3px;
+  }
+
+  .nav-brand span { color: var(--gold); }
+
+  .nav-links { display: flex; gap: 28px; list-style: none; }
+
+  .nav-links a {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 2px;
+    text-transform: uppercase; color: rgba(255,255,255,0.5);
+    text-decoration: none; transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  @media (max-width: 600px) { .nav-links { display: none; } }
+
+  /* ── HERO ── */
+  .hero {
+    background: var(--nav);
+    padding: 100px 0 80px;
+    position: relative; overflow: hidden;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute; right: 0; top: 0;
+    width: 40%; height: 100%;
+    background: linear-gradient(135deg, transparent 30%, rgba(184,137,42,0.06) 100%);
+    pointer-events: none;
+  }
+
+  .hero-inner { position: relative; z-index: 2; }
+
+  .hero-pre {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 4px;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 24px;
+    display: flex; align-items: center; gap: 12px;
+    opacity: 0; animation: rise 0.6s 0.1s ease forwards;
+  }
+
+  .hero-pre::before { content: ''; width: 28px; height: 1px; background: var(--gold2); }
+
+  .hero-name {
+    font-family: var(--serif);
+    font-size: clamp(40px, 6.5vw, 80px);
+    font-weight: 900; color: #ffffff;
+    line-height: 0.95; letter-spacing: -2px; margin-bottom: 22px;
+    opacity: 0; animation: rise 0.6s 0.2s ease forwards;
+  }
+
+  .hero-name span { color: var(--gold); }
+
+  .hero-title {
+    font-family: var(--sans); font-size: 14px; font-weight: 400;
+    color: rgba(255,255,255,0.6); letter-spacing: 0.5px; margin-bottom: 28px;
+    opacity: 0; animation: rise 0.6s 0.3s ease forwards;
+  }
+
+  .hero-title strong { color: var(--gold); font-weight: 600; }
+
+  .hero-quote {
+    font-family: var(--serif); font-size: 18px; font-style: italic;
+    color: rgba(255,255,255,0.5); max-width: 540px; line-height: 1.6;
+    border-left: 2px solid var(--gold2); padding-left: 18px;
+    margin-bottom: 40px;
+    opacity: 0; animation: rise 0.6s 0.4s ease forwards;
+  }
+
+  .hero-cta {
+    display: flex; flex-wrap: wrap; gap: 12px;
+    opacity: 0; animation: rise 0.6s 0.5s ease forwards;
+  }
+
+  .btn {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 2px;
+    text-transform: uppercase; padding: 13px 28px;
+    text-decoration: none; transition: all 0.25s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+
+  .btn-primary { background: var(--gold); color: #fff; font-weight: 600; }
+  .btn-primary:hover { background: #c89830; }
+
+  .btn-secondary { border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); }
+  .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+
+  @keyframes rise {
+    from { opacity:0; transform: translateY(16px); }
+    to   { opacity:1; transform: translateY(0); }
+  }
+
+  /* ── ABOUT STRIP ── */
+  .about-strip {
+    background: var(--bg2);
+    display: grid; grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+  }
+
+  @media (max-width: 680px) { .about-strip { grid-template-columns: 1fr; } }
+
+  .as-cell { padding: 32px 28px; border-right: 1px solid var(--border); }
+  .as-cell:last-child { border-right: none; }
+
+  .as-label {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 3px;
+    color: var(--gold2); text-transform: uppercase; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .as-label::before { content: ''; width: 16px; height: 1px; background: var(--gold); }
+
+  .as-val { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--bright); line-height: 1.5; }
+  .as-sub { font-size: 13px; color: var(--muted); margin-top: 4px; line-height: 1.5; }
+
+  /* ── SECTIONS ── */
+  main { padding: 0; }
+
+  section { padding: 72px 0; border-bottom: 1px solid var(--border); }
+  section:nth-child(even) { background: var(--bg2); }
+
+  .sec-head { margin-bottom: 44px; }
+
+  .sec-num {
+    font-family: var(--mono); font-size: 10px; letter-spacing: 4px;
+    color: var(--gold2); text-transform: uppercase; margin-bottom: 10px; display: block;
+  }
+
+  h2 {
+    font-family: var(--serif); font-size: clamp(26px, 3.5vw, 40px);
+    font-weight: 800; color: var(--bright); letter-spacing: -0.8px; line-height: 1.1;
+  }
+
+  h2 em { font-style: normal; color: var(--gold); }
+
+  .sec-sub { font-size: 15px; color: var(--muted); max-width: 560px; margin-top: 14px; line-height: 1.8; }
+
+  /* ── PROJECT CARDS ── */
+  .projects { display: flex; flex-direction: column; gap: 1px; background: var(--border); border: 1px solid var(--border); }
+
+  .proj-card {
+    display: grid; grid-template-columns: 60px 1fr 52px;
+    background: var(--bg2); text-decoration: none;
+    transition: all 0.2s; position: relative;
+  }
+
+  .proj-card:hover { background: #fffdf8; }
+
+  .proj-card::before {
+    content: '';
+    position: absolute; left: 0; top: 0; bottom: 0;
+    width: 3px; background: var(--border); transition: background 0.2s;
+  }
+
+  .proj-card:hover::before { background: var(--gold); }
+
+  .proj-num {
+    display: flex; align-items: center; justify-content: center;
+    border-right: 1px solid var(--border);
+    font-family: var(--mono); font-size: 11px; color: var(--light); padding: 28px 0;
+  }
+
+  .proj-body { padding: 24px 28px; }
+
+  .proj-tag {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+    color: var(--gold2); text-transform: uppercase; margin-bottom: 7px;
+  }
+
+  .proj-title {
+    font-family: var(--sans); font-size: 16px; font-weight: 700;
+    color: var(--bright); margin-bottom: 8px; line-height: 1.3;
+  }
+
+  .proj-desc {
+    font-size: 13px; color: var(--muted); line-height: 1.75;
+    margin-bottom: 14px; max-width: 680px;
+  }
+
+  .proj-pills { display: flex; flex-wrap: wrap; gap: 5px; }
+
+  .pill {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 0.5px;
+    padding: 3px 9px; border: 1px solid var(--border);
+    color: var(--muted); background: var(--bg3); border-radius: 2px; transition: all 0.2s;
+  }
+
+  .proj-card:hover .pill { border-color: var(--border2); color: var(--text); background: var(--gold3); }
+
+  .proj-arrow {
+    display: flex; align-items: center; justify-content: center;
+    border-left: 1px solid var(--border);
+    color: var(--light); font-size: 16px; transition: all 0.2s;
+  }
+
+  .proj-card:hover .proj-arrow { color: var(--gold); transform: translateX(3px); }
+
+  .proj-card.capstone { background: linear-gradient(135deg, #fdf8f0 0%, #fff9ee 100%); }
+  .proj-card.capstone::before { background: var(--gold); }
+  .proj-card.capstone .proj-title { color: var(--goldb); }
+
+  .capstone-tag {
+    display: inline-block;
+    font-family: var(--mono); font-size: 8px; letter-spacing: 1px;
+    padding: 2px 8px; background: var(--gold); color: #fff;
+    margin-left: 10px; vertical-align: middle; text-transform: uppercase; border-radius: 2px;
+  }
+
+  @media (max-width: 640px) {
+    .proj-card { grid-template-columns: 1fr; }
+    .proj-num { display: none; }
+    .proj-arrow { border-left: none; border-top: 1px solid var(--border); justify-content: flex-start; padding: 12px 24px; }
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--border); border: 1px solid var(--border);
+  }
+
+  @media (max-width: 640px) { .skills-grid { grid-template-columns: 1fr 1fr; } }
+
+  .skill-cell { background: var(--bg2); padding: 22px 24px; transition: background 0.2s; }
+  .skill-cell:hover { background: #fffdf8; }
+
+  .sk-cat {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 2px;
+    color: var(--gold2); text-transform: uppercase; margin-bottom: 7px;
+  }
+
+  .sk-name { font-family: var(--sans); font-size: 13px; font-weight: 500; color: var(--text); line-height: 1.5; }
+
+  /* ── CYBERWATCH ── */
+  .cw-block {
+    background: var(--nav); padding: 48px; position: relative; overflow: hidden;
+  }
+
+  .cw-block::after {
+    content: 'CyberWatch NG';
+    position: absolute; right: -20px; top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-family: var(--serif); font-size: 64px; font-weight: 900;
+    color: rgba(255,255,255,0.03); white-space: nowrap; pointer-events: none;
+  }
+
+  .cw-label {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 3px;
+    color: var(--gold); text-transform: uppercase; margin-bottom: 12px;
+    display: flex; align-items: center; gap: 8px;
+  }
+
+  .cw-label::before { content: ''; width: 18px; height: 1px; background: var(--gold2); }
+
+  .cw-title { font-family: var(--serif); font-size: 26px; font-weight: 800; color: #ffffff; margin-bottom: 14px; line-height: 1.2; }
+
+  .cw-body { font-size: 14px; color: rgba(255,255,255,0.65); max-width: 580px; line-height: 1.8; margin-bottom: 28px; }
+  .cw-body strong { color: rgba(255,255,255,0.9); }
+
+  .cw-links { display: flex; flex-wrap: wrap; gap: 14px; }
+
+  .cw-link {
+    font-family: var(--mono); font-size: 11px; letter-spacing: 1px;
+    color: rgba(255,255,255,0.5); text-decoration: none;
+    display: flex; align-items: center; gap: 6px; transition: color 0.2s;
+  }
+
+  .cw-link:hover { color: var(--gold); }
+  .cw-link::before { content: '↗'; color: var(--gold2); font-size: 12px; }
+
+  /* ── CONTACT ── */
+  .contact-strip {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--border); border: 1px solid var(--border);
+  }
+
+  @media (max-width: 600px) { .contact-strip { grid-template-columns: 1fr; } }
+
+  .contact-cell { background: var(--bg2); padding: 24px 28px; transition: background 0.2s; }
+  .contact-cell:hover { background: #fffdf8; }
+
+  .cc-label {
+    font-family: var(--mono); font-size: 9px; letter-spacing: 3px;
+    color: var(--gold2); text-transform: uppercase; margin-bottom: 8px;
+  }
+
+  .cc-link { font-family: var(--sans); font-size: 14px; font-weight: 600; color: var(--bright); text-decoration: none; transition: color 0.2s; }
+  .cc-link:hover { color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--nav); padding: 32px 0; }
+
+  .foot-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+
+  .f-name { font-family: var(--serif); font-size: 18px; font-weight: 800; color: rgba(255,255,255,0.4); letter-spacing: -0.5px; }
+
+  .f-right { font-family: var(--mono); font-size: 10px; color: rgba(255,255,255,0.3); text-align: right; line-height: 1.7; }
+
+  .foot-disc {
+    border-top: 1px solid rgba(255,255,255,0.08); margin-top: 20px; padding-top: 20px;
+    font-family: var(--mono); font-size: 10px; color: rgba(255,255,255,0.25); line-height: 1.7;
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="nav-brand">Chukwuemeka <span>Oko</span></a>
+    <ul class="nav-links">
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#cyberwatch">CyberWatch NG</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-inner">
+    <div class="hero-pre">Cybersecurity Portfolio</div>
+    <h1 class="hero-name">Chukwuemeka<br><span>Oko</span></h1>
+    <div class="hero-title">
+      <strong>Cybersecurity Analyst (Training) @ Bincom Dev Center</strong> &nbsp;·&nbsp; SOC & Cloud Security &nbsp;·&nbsp; Creator, CyberWatch NG
+    </div>
+    <p class="hero-quote">
+      "I believe cybersecurity education shouldn't wait for a certificate — and neither should I."
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">View Lab Projects ↓</a>
+      <a href="https://github.com/ChuksOko" target="_blank" class="btn btn-secondary">GitHub Profile ↗</a>
+      <a href="https://cyberwatchng.netlify.app" target="_blank" class="btn btn-secondary">CyberWatch NG ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="as-cell">
+    <div class="as-label">Currently</div>
+    <div class="as-val">Bincom Dev Center</div>
+    <div class="as-sub">Pursuing ISC² Certified in Cybersecurity (CC)</div>
+  </div>
+  <div class="as-cell">
+    <div class="as-label">Building</div>
+    <div class="as-val">CyberWatch NG</div>
+    <div class="as-sub">Digital safety for Nigerians — weekly, across 5 platforms</div>
+  </div>
+  <div class="as-cell">
+    <div class="as-label">Open To</div>
+    <div class="as-val">Internships · Entry-level roles</div>
+    <div class="as-sub">Threat detection · Incident response · Nigeria & remote</div>
+  </div>
+</div>
+
+<main>
+  <div class="wrap">
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="sec-head">
+        <span class="sec-num">01 — Lab Projects</span>
+        <h2>Hands-on <em>Security Work</em></h2>
+        <p class="sec-sub">Seven labs covering offensive, defensive, cloud, and monitoring security disciplines — all conducted in isolated virtual environments or authorised platforms.</p>
+      </div>
+      <div class="projects">
+
+        <a class="proj-card capstone" href="https://github.com/ChuksOko/cybersecurity-homelab" target="_blank">
+          <div class="proj-num">01</div>
+          <div class="proj-body">
+            <div class="proj-tag">Integrated Homelab <span class="capstone-tag">Capstone</span></div>
+            <div class="proj-title">Full-Stack Cybersecurity Homelab Architecture</div>
+            <div class="proj-desc">4-VM isolated lab combining offensive recon, WAF defence, ELK SIEM log collection, and a Cowrie SSH honeypot — all on a single VirtualBox Host-Only network. The capstone unifying every discipline below.</div>
+            <div class="proj-pills">
+              <span class="pill">Nmap</span><span class="pill">ModSecurity</span><span class="pill">Filebeat</span><span class="pill">Elasticsearch</span><span class="pill">Kibana</span><span class="pill">Cowrie</span><span class="pill">VirtualBox</span>
+            </div>
+          </div>
+          <div class="proj-arrow">→</div>
+        </a>
+
+        <a class="proj-card" href="https://github.com/ChuksOko/-WAF-Defense-Validation-Lab---ModSecurity-Apache" target="_blank">
+          <div class="proj-num">02</div>
+          <div class="proj-body">
+            <div class="proj-tag">Defensive Security</div>
+            <div class="proj-title">WAF Defense Validation — ModSecurity + Apache</div>
+            <div class="proj-desc">Deployed ModSecurity in blocking mode with custom rules for XSS and SQL Injection. All 4 attacks confirmed successful pre-WAF, then fully blocked post-deployment across DVWA and PrestaShop (HTTP 403).</div>
+            <div class="proj-pills">
+              <span class="pill">ModSecurity</span><span class="pill">Apache</span><span class="pill">OWASP CRS</span><span class="pill">SQLi</span><span class="pill">XSS</span><span class="pill">DVWA</span><span class="pill">PrestaShop</span>
+            </div>
+          </div>
+          <div class="proj-arrow">→</div>
+        </a>
+
+        <a class="proj-card" href="https://github.com/ChuksOko/ELK-SSH-Bruteforce-Detection" target="_blank">
+          <div class="proj-num">03</div>
+          <div class="proj-body">
+            <div class="proj-tag">SIEM · Threat Detection</div>
+            <div class="proj-title">SSH Brute-Force Detection — ELK Stack SIEM</div>
+            <div class="proj-desc">Full ELK Stack SIEM deployment — syslog ingestion via Logstash, SSH brute-force simulation with Hydra, real-time detection in Kibana Discover using KQL, and a custom SSH Brute Force Detection Dashboard.</div>
+            <div class="proj-pills">
+              <span class="pill">Elasticsearch</span><span class="pill">Logstash</span><span class="pill">Kibana</span><span class="pill">Hydra</span><span class="pill">KQL</span><span class="pill">Syslog</span>
+            </div>
+          </div>
+          <div class="proj-arrow">→</div>
+        </a>
+
+        <a class="proj-card" href="https://github.com/ChuksOko/-Cloud-Privilege-Escalation-Simulation---AWS-IAM" target="_blank">
+          <div class="proj-num">04</div>
+          <div class="proj-body">
+            <div class="proj-tag">Cloud Security · AWS</div>
+            <div class="proj-title">Cloud Privilege Escalation Simulation — AWS IAM</div>
+            <div class="proj-desc">Simulated a real-world AWS IAM privilege escalation — exploiting a misconfigured iam:AttachUserPolicy permission to self-escalate from low-privilege user to full administrator via CLI, then fully remediated.</div>
+            <div class="proj-pills">
+              <span class="pill">AWS IAM</span><span class="pill">AWS CLI</span><span class="pill">PowerShell</span><span class="pill">Least Privilege</span><span class="pill">MITRE T1098</span>
+            </div>
+          </div>
+          <div class="proj-arrow">→</div>
+        </a>
+
+        <a class="proj-card" href="https://github.com/ChuksOko/Vulnerability-Scan-Exploit-Simulation-Lab" target="_blank">
+          <div class="proj-num">05</div>
+          <div class="proj-body">
+            <div class="proj-tag">Offensive Security · Pentesting</div>
+            <div class="proj-title">Vulnerability Scan & Exploit Simulation</div>
+            <div class="proj-desc">End-to-end pentest workflow — OpenVAS discovery scanning, DistCC RCE exploitation via Metasploit to gain a reverse shell, SQL Injection on DVWA, and full remediation documentation.</div>
+            <div class="proj-pills">
+              <span class="pill">OpenVAS</span><span class="pill">Metasploit</span><span class="pill">DVWA</span><span class="pill">SQL Injection</span><span class="pill">Kali Linux</span>
+            </div>
+          </div>
+          <div class="proj-arrow">→</div>
+        </a>
+
+        <a class="proj-card" href="https://github.com/ChuksOko/thm-pickle-rick-ctf" target="_blank">
+          <div class="proj-num">06</div>
+          <div class="proj-body">
+            <div class="proj-tag">CTF · TryHackMe</div>
+            <div class="proj-title">TryHackMe CTF — Pickle Rick (Room Completed)</div>
+            <div class="proj-desc">Completed TryHackMe's Pickle Rick room — web enumeration, command injection RCE exploitation, and root privilege escalation via sudo misconfiguration. All 3 flags captured. 90 points earned.</div>
+            <div class="proj-pills">
+              <span class="pill">TryHackMe</span><span class="pill">RCE</span><span class="pill">Web Exploitation</span><span class="pill">PrivEsc</span><span class="pill">Linux</span>
+            </div>
+          </div>
+          <div class="proj-arrow">→</div>
+        </a>
+
+        <a class="proj-card" href="https://github.com/ChuksOko/cybersecurity-labs-bincom-academy" target="_blank">
+          <div class="proj-num">07</div>
+          <div class="proj-body">
+            <div class="proj-tag">Training · Bincom Dev Center</div>
+            <div class="proj-title">Cybersecurity Training — Bincom Academy Labs</div>
+            <div class="proj-desc">Structured cybersecurity training at Bincom Dev Center — foundational and practical security coursework underpinning all lab projects above.</div>
+            <div class="proj-pills">
+              <span class="pill">Bincom Dev Center</span><span class="pill">Cybersecurity Fundamentals</span>
+            </div>
+          </div>
+          <div class="proj-arrow">→</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="sec-head">
+        <span class="sec-num">02 — Skills</span>
+        <h2>Technical <em>Capabilities</em></h2>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-cell"><div class="sk-cat">Offensive</div><div class="sk-name">Vulnerability Assessment · Metasploit · Nmap · Hydra · CTF</div></div>
+        <div class="skill-cell"><div class="sk-cat">Defensive</div><div class="sk-name">WAF Configuration · ModSecurity · OWASP CRS · Hardening</div></div>
+        <div class="skill-cell"><div class="sk-cat">SIEM & Detection</div><div class="sk-name">ELK Stack · Kibana · KQL · Filebeat · Logstash · Log Analysis</div></div>
+        <div class="skill-cell"><div class="sk-cat">Cloud Security</div><div class="sk-name">AWS IAM · Privilege Escalation · Least Privilege · CLI</div></div>
+        <div class="skill-cell"><div class="sk-cat">Deception</div><div class="sk-name">Cowrie Honeypot · SSH Decoy · Credential Capture</div></div>
+        <div class="skill-cell"><div class="sk-cat">Incident Response</div><div class="sk-name">Documentation · Remediation Reports · Evidence Collection</div></div>
+      </div>
+    </section>
+
+    <!-- CYBERWATCH -->
+    <section id="cyberwatch" style="background:transparent;">
+      <div class="sec-head">
+        <span class="sec-num">03 — Initiative</span>
+        <h2>CyberWatch <em>NG</em></h2>
+      </div>
+      <div class="cw-block">
+        <div class="cw-label">Created by Chukwuemeka Oko</div>
+        <div class="cw-title">Protecting Nigerians in the Digital World</div>
+        <p class="cw-body">
+          CyberWatch NG translates complex cyber threats into practical guidance for individuals, SMEs, and professionals — publishing weekly across WhatsApp, Instagram, YouTube, and LinkedIn with one goal: <strong>fewer Nigerians falling victim to scams and digital fraud.</strong>
+        </p>
+        <div class="cw-links">
+          <a href="https://cyberwatchng.netlify.app" target="_blank" class="cw-link">cyberwatchng.netlify.app</a>
+          <a href="https://instagram.com/cyberwatchng.official" target="_blank" class="cw-link">@cyberwatchng.official</a>
+          <a href="https://youtube.com/@cyberwatchng" target="_blank" class="cw-link">YouTube · @cyberwatchng</a>
+          <a href="mailto:cyberwatchng.official@gmail.com" class="cw-link">cyberwatchng.official@gmail.com</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="sec-head">
+        <span class="sec-num">04 — Contact</span>
+        <h2>Get in <em>Touch</em></h2>
+        <p class="sec-sub">Open to cybersecurity internships, entry-level roles in threat detection or incident response, speaking engagements, and digital safety partnerships in Nigeria.</p>
+      </div>
+      <div class="contact-strip">
+        <div class="contact-cell">
+          <div class="cc-label">Email</div>
+          <a href="mailto:cyberwatchng.official@gmail.com" class="cc-link">cyberwatchng.official@gmail.com</a>
+        </div>
+        <div class="contact-cell">
+          <div class="cc-label">GitHub</div>
+          <a href="https://github.com/ChuksOko" target="_blank" class="cc-link">github.com/ChuksOko</a>
+        </div>
+        <div class="contact-cell">
+          <div class="cc-label">Instagram</div>
+          <a href="https://instagram.com/cyberwatchng.official" target="_blank" class="cc-link">@cyberwatchng.official</a>
+        </div>
+        <div class="contact-cell">
+          <div class="cc-label">YouTube</div>
+          <a href="https://youtube.com/@cyberwatchng" target="_blank" class="cc-link">@cyberwatchng</a>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-inner">
+      <div class="f-name">Chukwuemeka Oko</div>
+      <div class="f-right">Cybersecurity Portfolio · 2026<br>Bincom Dev Center · CyberWatch NG</div>
+    </div>
+    <div class="foot-disc">
+      All lab work was conducted in isolated, non-production virtual environments or authorised platforms (TryHackMe, AWS own account) strictly for educational purposes. No third-party or production systems were accessed.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
