@@ -76,10 +76,12 @@ I am currently pursuing the **ISC² Certified in Cybersecurity (CC)** certificat
 
 ---
 
-### 7. 📚 Bincom Dev Center — Training Coursework
-**Structured cybersecurity training** at Bincom Dev Center covering foundational and practical security concepts underpinning all lab work above.
+### 7. 🍯 Cowrie Honeypot — SSH Attack Detection & Network Forensics
+Deployed a Cowrie SSH honeypot to capture and analyse a simulated SSH attack — Nmap reconnaissance, password authentication attempt, live Wireshark packet capture (249 packets), full Cowrie log analysis, and IoC extraction. Formal incident report produced.
 
-🔗 **[View Repository →](https://github.com/ChuksOko/cybersecurity-labs-bincom-academy)**
+`Cowrie` · `Wireshark` · `Nmap` · `SSH` · `PCAP` · `Kali Linux` · `Ubuntu Server`
+
+🔗 **[View Project →](https://github.com/ChuksOko/cowrie-honeypot-ssh-detection)**
 
 ---
 
