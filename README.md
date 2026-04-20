@@ -1,17 +1,21 @@
 # Chukwuemeka Oko — Cybersecurity Portfolio
 
-**Cybersecurity Analyst (Training) @ Bincom Dev Center · SOC & Cloud Security · Creator, CyberWatch NG**
-
-> *"I believe cybersecurity education shouldn't wait for a certificate — and neither should I."*
+Junior SOC Analyst | Bincom Dev Center · Incident Response · Threat Detection · SIEM (ELK) · Founder, CyberWatch NG
 
 ---
 
 ## 👤 About Me
 
-I am a cybersecurity trainee at **Bincom Dev Center**, building hands-on skills through real-world attack and defence simulations. Alongside my training, I founded **CyberWatch NG** — a digital safety initiative that translates complex cyber threats into practical guidance for Nigerians across WhatsApp, Instagram, YouTube, and LinkedIn.
+I am a Junior SOC Analyst in training at Bincom Dev Center, building 
+hands-on skills in threat detection, incident response, and SIEM 
+operations using the ELK Stack. Alongside my training, I founded 
+CyberWatch NG — a digital safety initiative that translates complex 
+cyber threats into practical guidance for Nigerians across WhatsApp, 
+Instagram, YouTube, and LinkedIn.
 
-I am currently pursuing the **ISC² Certified in Cybersecurity (CC)** certification and actively seeking cybersecurity internships and entry-level roles in threat detection or incident response.
-
+I am currently pursuing the ISC² Certified in Cybersecurity (CC) 
+certification and actively seeking entry-level SOC analyst roles in 
+threat detection or incident response.
 ---
 
 ## 🔐 Skills & Focus
