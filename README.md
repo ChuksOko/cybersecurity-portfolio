@@ -121,7 +121,7 @@ I founded **CyberWatch NG** because Nigerians deserve better protection in an in
 
 ## 🤝 Open To
 
-Cybersecurity internships · Entry-level roles in threat detection or incident response · Speaking engagements · Partnerships focused on digital safety in Nigeria
+Cybersecurity Entry-level & Junior roles  · Full-time · Remote in threat detection or incident response · Speaking engagements · Partnerships focused on digital safety in Nigeria
 
 ---
 
