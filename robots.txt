@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chuksoko.github.io/cybersecurity-portfolio/sitemap.xml

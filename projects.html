@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects — Chukwuemeka Oko</title>
+<meta name="description" content="Security Operations, Cloud Security, Penetration Testing, and Network Forensics projects by Chukwuemeka Oko.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="dot"></span> C. OKO</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html" class="active">Projects</a>
+      <a href="articles.html">Articles</a>
+      <a href="cyberwatch.html">CyberWatch NG</a>
+      <a href="resumes.html">Resumes</a>
+      <a href="contact.html">Contact</a>
+      <a href="resumes.html" class="nav-resume-btn">Download Resume</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="eyebrow">Projects</div>
+    <h1>Hands-on labs, <span class="accent">organized by discipline.</span></h1>
+    <p class="lede">Every project below was run in an isolated lab or authorized environment. Full case-study pages — architecture diagrams, screenshots, logs, and MITRE ATT&amp;CK mappings — are being added project by project; GitHub repos are live now.</p>
+  </div>
+</header>
+
+<section id="all-projects">
+  <div class="wrap">
+
+    <div class="cat-block">
+      <div class="cat-title">Security Operations</div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>ELK Stack SIEM — SSH Brute-Force Detection</h3>
+          <p>Centralized logging pipeline, simulated Hydra brute-force attack, custom Kibana dashboards and KQL detection queries.</p>
+          <div class="chip-row"><span class="chip">ELK Stack</span><span class="chip">Kibana</span><span class="chip">Hydra</span></div>
+          <a class="card-link" href="https://github.com/ChuksOko/ELK-SSH-Bruteforce-Detection" target="_blank" rel="noopener">GitHub repository →</a>
+        </div>
+        <div class="card">
+          <h3>Integrated SOC Homelab</h3>
+          <p>4-VM lab integrating Kali Linux, DVWA, ModSecurity, ELK SIEM, and a Cowrie honeypot for realistic monitoring.</p>
+          <div class="chip-row"><span class="chip">ELK Stack</span><span class="chip">Cowrie</span><span class="chip">ModSecurity</span></div>
+          <a class="card-link" href="https://github.com/ChuksOko/cybersecurity-homelab" target="_blank" rel="noopener">GitHub repository →</a>
+        </div>
+        <div class="card">
+          <h3>Cowrie Honeypot — SSH Attack Detection</h3>
+          <p>Captured and analyzed simulated SSH attacks — 249 packets analyzed, IOCs extracted, formal incident report produced.</p>
+          <div class="chip-row"><span class="chip">Cowrie</span><span class="chip">Wireshark</span><span class="chip">Nmap</span></div>
+          <a class="card-link" href="https://github.com/ChuksOko/cowrie-honeypot-ssh-detection" target="_blank" rel="noopener">GitHub repository →</a>
+        </div>
+        <div class="card coming-soon">
+          <h3>Malware Traffic Analysis <span class="status-pill status-open">COMING SOON</span></h3>
+          <p>Network-based malware traffic investigation using packet capture analysis.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="cat-title">Cloud Security</div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>AWS IAM Privilege Escalation</h3>
+          <p>Exploited an overly permissive iam:AttachUserPolicy permission, escalated to admin, then remediated and verified least-privilege enforcement.</p>
+          <div class="chip-row"><span class="chip">AWS IAM</span><span class="chip">MITRE ATT&CK T1098</span></div>
+          <a class="card-link" href="https://github.com/ChuksOko/-Cloud-Privilege-Escalation-Simulation---AWS-IAM" target="_blank" rel="noopener">GitHub repository →</a>
+        </div>
+        <div class="card coming-soon">
+          <h3>Terraform Security Audit <span class="status-pill status-open">COMING SOON</span></h3>
+          <p>Infrastructure-as-code security review of a Terraform deployment.</p>
+        </div>
+        <div class="card coming-soon">
+          <h3>AWS Security Labs <span class="status-pill status-open">COMING SOON</span></h3>
+          <p>Additional hands-on AWS security configuration and hardening labs.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="cat-title">Penetration Testing</div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Web Application Security Assessment</h3>
+          <p>End-to-end assessment identifying SQL Injection and XSS vulnerabilities, with risk ratings and remediation guidance aligned to the OWASP Top 10.</p>
+          <div class="chip-row"><span class="chip">Burp Suite</span><span class="chip">OpenVAS</span><span class="chip">Metasploit</span></div>
+          <a class="card-link" href="https://github.com/ChuksOko/Vulnerability-Scan-Exploit-Simulation-Lab" target="_blank" rel="noopener">GitHub repository →</a>
+        </div>
+        <div class="card">
+          <h3>WAF Validation — ModSecurity + OWASP CRS</h3>
+          <p>Confirmed SQLi/XSS were exploitable, deployed ModSecurity in blocking mode, then verified HTTP 403 enforcement.</p>
+          <div class="chip-row"><span class="chip">ModSecurity</span><span class="chip">DVWA</span><span class="chip">PrestaShop</span></div>
+          <a class="card-link" href="https://github.com/ChuksOko/-WAF-Defense-Validation-Lab---ModSecurity-Apache" target="_blank" rel="noopener">GitHub repository →</a>
+        </div>
+        <div class="card">
+          <h3>DVWA Lab — TryHackMe Pickle Rick</h3>
+          <p>Web enumeration, command injection RCE, and privilege escalation through a sudo misconfiguration. 3/3 flags captured.</p>
+          <div class="chip-row"><span class="chip">TryHackMe</span><span class="chip">RCE</span><span class="chip">Privesc</span></div>
+          <a class="card-link" href="https://github.com/ChuksOko/thm-pickle-rick-ctf" target="_blank" rel="noopener">GitHub repository →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="cat-block">
+      <div class="cat-title">Network Forensics</div>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Wireshark Packet Analysis</h3>
+          <p>Captured and analyzed network traffic from a Cowrie honeypot deployment — 249 packets reviewed, IOCs documented.</p>
+          <div class="chip-row"><span class="chip">Wireshark</span><span class="chip">PCAP</span></div>
+          <a class="card-link" href="https://github.com/ChuksOko/cowrie-honeypot-ssh-detection" target="_blank" rel="noopener">GitHub repository →</a>
+        </div>
+        <div class="card coming-soon">
+          <h3>Malware Traffic Investigation <span class="status-pill status-open">COMING SOON</span></h3>
+          <p>Deeper forensic investigation of malicious network traffic patterns.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Chukwuemeka Oko · Port Harcourt, Nigeria</span>
+    <div class="footer-links">
+      <a href="https://github.com/ChuksOko" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/chukwuemeka-oko" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="cyberwatch.html">CyberWatch NG</a>
+      <a href="mailto:okochukwuemekairoha@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
