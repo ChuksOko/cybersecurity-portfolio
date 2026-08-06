@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Chukwuemeka Oko</title>
+<meta name="description" content="Get in touch with Chukwuemeka Oko for SOC, cloud security, penetration testing, or CyberWatch NG opportunities.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html"><span class="dot"></span> C. OKO</a>
+    <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+    <nav class="navlinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="articles.html">Articles</a>
+      <a href="cyberwatch.html">CyberWatch NG</a>
+      <a href="resumes.html">Resumes</a>
+      <a href="contact.html" class="active">Contact</a>
+      <a href="resumes.html" class="nav-resume-btn">Download Resume</a>
+    </nav>
+  </div>
+</div>
+
+<header class="page-header">
+  <div class="wrap">
+    <div class="eyebrow">Contact</div>
+    <h1>Let's talk <span class="accent">security operations.</span></h1>
+    <p class="lede">Open to SOC, cloud security, penetration testing, and CyberWatch NG collaboration opportunities.</p>
+  </div>
+</header>
+
+<section id="contact-info">
+  <div class="wrap grid-2">
+    <div class="panel">
+      <h3>Contact Information</h3>
+      <ul class="list-plain">
+        <li>Email: <a href="mailto:okochukwuemekairoha@gmail.com" style="color:var(--cyan);">okochukwuemekairoha@gmail.com</a></li>
+        <li>LinkedIn: <a href="https://www.linkedin.com/in/chukwuemeka-oko" target="_blank" rel="noopener" style="color:var(--cyan);">linkedin.com/in/chukwuemeka-oko</a></li>
+        <li>GitHub: <a href="https://github.com/ChuksOko" target="_blank" rel="noopener" style="color:var(--cyan);">github.com/ChuksOko</a></li>
+        <li>CyberWatch NG: <a href="mailto:cyberwatchng.official@gmail.com" style="color:var(--cyan);">cyberwatchng.official@gmail.com</a></li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Availability</h3>
+      <ul class="list-plain">
+        <li class="check-item">Open to Remote Roles</li>
+        <li class="check-item">Open to Hybrid Opportunities</li>
+        <li class="check-item">Open to Contract Work</li>
+        <li class="check-item">Open to Full-Time Roles</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section id="contact-form">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">Send a Message</span>
+      <h2>Get in touch</h2>
+      <p class="section-lede">This form opens your email client with the message pre-filled — nothing is sent from this page directly.</p>
+    </div>
+    <form id="contactForm" style="max-width:640px;">
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-field">
+        <label for="subject">Subject</label>
+        <input type="text" id="subject" name="subject" required>
+      </div>
+      <div class="form-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="section-num">FAQ</span>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <details class="faq">
+      <summary>What roles are you targeting?</summary>
+      <p>Junior SOC Analyst, security operations / blue team, incident response, and detection engineering roles — with growing interest in cloud security.</p>
+    </details>
+    <details class="faq">
+      <summary>Are you available for freelance security assessments?</summary>
+      <p>Yes — reach out with details of the scope and I'll confirm availability and fit.</p>
+    </details>
+    <details class="faq">
+      <summary>How quickly do you respond?</summary>
+      <p>Typically within 1–2 business days by email.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© 2026 Chukwuemeka Oko · Port Harcourt, Nigeria</span>
+    <div class="footer-links">
+      <a href="https://github.com/ChuksOko" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/chukwuemeka-oko" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="cyberwatch.html">CyberWatch NG</a>
+      <a href="mailto:okochukwuemekairoha@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    var name = document.getElementById('name').value;
+    var email = document.getElementById('email').value;
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+    var body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+    window.location.href = 'mailto:okochukwuemekairoha@gmail.com?subject=' + encodeURIComponent(subject) + '&body=' + body;
+  });
+</script>
+</body>
+</html>
