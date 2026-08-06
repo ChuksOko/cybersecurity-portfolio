@@ -179,7 +179,7 @@ p{ color:var(--text-muted); }
 .list-plain{ list-style:none; padding:0; margin:0; }
 .list-plain li{ padding:9px 0; border-bottom:1px solid var(--border-soft); font-size:14px; color:var(--text-muted); }
 .list-plain li:last-child{ border-bottom:none; }
-.check-item{ padding-left:22px; position:relative; padding-left: 28px; }
+.check-item{ position:relative; padding-left: 28px; }
 .check-item::before{ content:"✓"; position:absolute; left:0; color:var(--cyan); font-family:var(--font-mono); font-size:12px; }
 .cross-item{ padding-left:22px; position:relative; color:var(--text-dim); }
 .cross-item::before{ content:"–"; position:absolute; left:0; font-family:var(--font-mono); font-size:12px; }
